@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.android.inventory.DetailActivity">
+
+
+    <LinearLayout
+        android:id="@+id/product_name_container"
+        style="@style/ProductDetailsContainer">
+
+        <TextView
+            style="@style/ProductDetails"
+            android:text="Product Name:"/>
+
+        <TextView
+            android:id="@+id/display_product_name"
+            style="@style/ProductDetails"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/product_price_container"
+        style="@style/ProductDetailsContainer">
+
+        <TextView
+            style="@style/ProductDetails"
+            android:text="Price"/>
+
+        <TextView
+            android:id="@+id/display_product_price"
+            style="@style/ProductDetails"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/product_stock_container"
+        style="@style/ProductDetailsContainer">
+
+        <TextView
+            style="@style/ProductDetails"
+            android:text="Stock"/>
+
+        <Button
+            android:id="@+id/decrease_product_stock"
+            style="@style/Button"
+            android:text="-"/>
+
+        <TextView
+            android:id="@+id/display_product_stock"
+            style="@style/ProductDetails"/>
+
+        <Button
+            android:id="@+id/increase_product_stock"
+            style="@style/Button"
+            android:text="+"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/product_supplier_name_container"
+        style="@style/ProductDetailsContainer">
+
+        <TextView
+            style="@style/ProductDetails"
+            android:text="Supplier Name"/>
+
+        <TextView
+            android:id="@+id/display_product_supplier_name"
+            style="@style/ProductDetails"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/product_supplier_email_container"
+        style="@style/ProductDetailsContainer">
+
+        <TextView
+            style="@style/ProductDetails"
+            android:text="Supplier e-mail:"/>
+
+        <TextView
+            android:id="@+id/display_product_supplier_email"
+            style="@style/ProductDetails"/>
+
+        <Button
+            android:id="@+id/email_button"
+            style="@style/ProductDetails"
+            android:text="Send e-mail"/>
+    </LinearLayout>
+
+</LinearLayout>
