@@ -22,17 +22,39 @@ import butterknife.ButterKnife;
 public class CatalogActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor> {
 
-    @BindView(R.id.fab) FloatingActionButton fab;
+    @BindView(R.id.fab)
+    FloatingActionButton fab;
+    @BindView(R.id.list)
+    ListView productListView;
+    @BindView(R.id.empty_list_view)
+    View emptyView;
 
     private static final int PRODUCT_LOADER = 0;
 
-    ProductCursorAdapter mCursorAdapter;
+    ProductCursorAdapter cursorAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_catalog);
+        setContentView(R.layout.product_list);
         ButterKnife.bind(this);
+
+        productListView.setEmptyView(emptyView);
+
+        cursorAdapter = new ProductCursorAdapter(this, null);
+        productListView.setAdapter(cursorAdapter);
+        productListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+
+                Uri currentProductUri = ContentUris.withAppendedId(ProductContract.ProductEntry.CONTENT_URI, id);
+                Intent intent = new Intent(CatalogActivity.this, DetailActivity.class);
+                intent.putExtra("item-identifier", id);
+                intent.setData(currentProductUri);
+
+                startActivity(intent);
+            }
+        });
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,30 +64,7 @@ public class CatalogActivity extends AppCompatActivity implements
             }
         });
 
-        ListView productListView = (ListView) findViewById(R.id.list);
-
-        View emptyView = findViewById(R.id.empty_list_view);
-        productListView.setEmptyView(emptyView);
-
-        mCursorAdapter = new ProductCursorAdapter(this, null);
-        productListView.setAdapter(mCursorAdapter);
-        productListView.setClickable(true);
-        productListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-
-                Intent intent = new Intent(CatalogActivity.this, DetailActivity.class);
-
-                Uri currentProductUri = ContentUris.withAppendedId(ProductContract.ProductEntry.CONTENT_URI, id);
-
-                intent.setData(currentProductUri);
-
-                startActivity(intent);
-            }
-        });
-
         getLoaderManager().initLoader(PRODUCT_LOADER, null, this);
-
     }
 
     @Override
@@ -75,7 +74,6 @@ public class CatalogActivity extends AppCompatActivity implements
                 ProductContract.ProductEntry.COLUMN_PRODUCT_NAME,
                 ProductContract.ProductEntry.COLUMN_PRODUCT_PRICE,
                 ProductContract.ProductEntry.COLUMN_PRODUCT_STOCK};
-
 
         return new CursorLoader(this,
                 ProductContract.ProductEntry.CONTENT_URI,
@@ -87,11 +85,11 @@ public class CatalogActivity extends AppCompatActivity implements
 
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
-        mCursorAdapter.swapCursor(data);
+        cursorAdapter.swapCursor(data);
     }
 
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
-        mCursorAdapter.swapCursor(null);
+        cursorAdapter.swapCursor(null);
     }
 }

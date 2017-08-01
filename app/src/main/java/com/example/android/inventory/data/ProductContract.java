@@ -54,6 +54,8 @@ public final class ProductContract {
 
         public final static String COLUMN_PRODUCT_SUPPLIER_EMAIL = "supplier_email";
 
+        public final static String COLUMN_PRODUCT_IMAGE = "image";
+
     }
 
 }

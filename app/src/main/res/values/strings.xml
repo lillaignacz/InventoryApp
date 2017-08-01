@@ -1,18 +1,42 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Inventory</string>
 
-    <string name="add_new_product">Add new product</string>
-    <string name="details">Details</string>
-    <string name="editor_insert_product_failed">Editor insert product failed</string>
-    <string name="editor_insert_product_successful">Editor insert product successful</string>
-    <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing?</string>
+    <!--activity_detail.xml && activity_editor.xml-->
+    <string name="editor_activity_title">Add new product</string>
+    <string name="detail_activity_title">Details</string>
+    <string name="product_name_label">Product Name</string>
+    <string name="price_label">Price</string>
+    <string name="stock_label">Stock</string>
+    <string name="supplier_name_label">Supplier</string>
+    <string name="supplier_email_label">Contact</string>
+    <string name="plus_button_label">+</string>
+    <string name="minus_button_label">-</string>
+    <string name="add_image_button_label">Add Image</string>
+    <string name="order_more_button_label">Order more</string>
+    <string name="sale_button_label">Sale</string>
+
+    <!--product_list.xml-->
+    <string name="empty_list_view_message">Add products by pressing the plus button below.</string>
+
+    <!--java files-->
+    <string name="editor_insert_product_successful">Product created</string>
+    <string name="editor_insert_product_failed">Error with creating product</string>
     <string name="editor_update_product_successful">Product updated</string>
     <string name="editor_update_product_failed">Error with updating product</string>
     <string name="editor_delete_product_successful">Product deleted</string>
     <string name="editor_delete_product_failed">Error with deleting product</string>
+    <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing?</string>
     <string name="discard">Discard</string>
     <string name="keep_editing">Keep Editing</string>
     <string name="delete_dialog_msg">Delete this product?</string>
     <string name="delete">Delete</string>
     <string name="cancel">Cancel</string>
+    <string name="currency">€</string>
+    <string name="empty_field_message">Please fill out all product details.</string>
+    <string name="image_not_added_message">Please add an image.</string>
+    <string name="email_subject">New order from Inventory App</string>
+    <string name="email_body_product_name">Product Name: </string>
+    <string name="minimum_stock_toast">Minimum stock is 0.</string>
+
+
 </resources>

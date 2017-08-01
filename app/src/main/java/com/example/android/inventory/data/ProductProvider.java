@@ -115,6 +115,11 @@ public class ProductProvider extends ContentProvider {
             throw new IllegalArgumentException("Product requires the supplier email");
         }
 
+        String imageBitmapURI = values.getAsString(ProductContract.ProductEntry.COLUMN_PRODUCT_IMAGE);
+        if (imageBitmapURI == null) {
+            throw new IllegalArgumentException("Product requires an image");
+        }
+
         SQLiteDatabase database = mDbHelper.getWritableDatabase();
 
         long id = database.insert(ProductContract.ProductEntry.TABLE_NAME, null, values);

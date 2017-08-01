@@ -1,95 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.android.inventory.DetailActivity">
 
-
     <LinearLayout
-        android:id="@+id/product_name_container"
-        style="@style/ProductDetailsContainer">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <TextView
-            style="@style/ProductDetails"
-            android:text="Product Name:"/>
+        <LinearLayout
+            android:id="@+id/product_name_container"
+            style="@style/ProductDetailsContainer">
 
-        <TextView
-            android:id="@+id/display_product_name"
-            style="@style/ProductDetails"/>
-    </LinearLayout>
+            <TextView
+                style="@style/ProductDetails"
+                android:text="@string/product_name_label" />
 
-    <LinearLayout
-        android:id="@+id/product_price_container"
-        style="@style/ProductDetailsContainer">
+            <TextView
+                android:id="@+id/display_product_name"
+                style="@style/ProductDetails" />
+        </LinearLayout>
 
-        <TextView
-            style="@style/ProductDetails"
-            android:text="Price"/>
+        <LinearLayout
+            android:id="@+id/product_price_container"
+            style="@style/ProductDetailsContainer">
 
-        <TextView
-            android:id="@+id/display_product_price"
-            style="@style/ProductDetails"/>
+            <TextView
+                style="@style/ProductDetails"
+                android:text="@string/price_label" />
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/display_product_price"
+                style="@style/ProductDetails" />
 
-
-    <LinearLayout
-        android:id="@+id/product_stock_container"
-        style="@style/ProductDetailsContainer">
-
-        <TextView
-            style="@style/ProductDetails"
-            android:text="Stock"/>
-
-        <Button
-            android:id="@+id/decrease_product_stock"
-            style="@style/Button"
-            android:text="-"/>
-
-        <TextView
-            android:id="@+id/display_product_stock"
-            style="@style/ProductDetails"/>
-
-        <Button
-            android:id="@+id/increase_product_stock"
-            style="@style/Button"
-            android:text="+"/>
-
-    </LinearLayout>
+        </LinearLayout>
 
 
-    <LinearLayout
-        android:id="@+id/product_supplier_name_container"
-        style="@style/ProductDetailsContainer">
+        <LinearLayout
+            android:id="@+id/product_stock_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-        <TextView
-            style="@style/ProductDetails"
-            android:text="Supplier Name"/>
+            <TextView
+                style="@style/DetailsStockLabelView"
+                android:text="@string/stock_label" />
 
-        <TextView
-            android:id="@+id/display_product_supplier_name"
-            style="@style/ProductDetails"/>
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="@dimen/dp_0"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-    <LinearLayout
-        android:id="@+id/product_supplier_email_container"
-        style="@style/ProductDetailsContainer">
+                <Button
+                    android:id="@+id/decrease_stock_button"
+                    style="@style/QuantityChangerButton"
+                    android:text="@string/minus_button_label" />
 
-        <TextView
-            style="@style/ProductDetails"
-            android:text="Supplier e-mail:"/>
+                <TextView
+                    android:id="@+id/display_product_stock"
+                    style="@style/DetailsStockQuantityView"
+                    android:gravity="center"/>
 
-        <TextView
-            android:id="@+id/display_product_supplier_email"
-            style="@style/ProductDetails"/>
+                <Button
+                    android:id="@+id/increase_stock_button"
+                    style="@style/QuantityChangerButton"
+                    android:text="@string/plus_button_label" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/product_supplier_name_container"
+            style="@style/ProductDetailsContainer">
+
+            <TextView
+                style="@style/ProductDetails"
+                android:text="@string/supplier_name_label" />
+
+            <TextView
+                android:id="@+id/display_product_supplier_name"
+                style="@style/ProductDetails" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/product_supplier_email_container"
+            style="@style/ProductDetailsContainer">
+
+            <TextView
+                style="@style/ProductDetails"
+                android:text="@string/supplier_email_label" />
+
+            <TextView
+                android:id="@+id/display_product_supplier_email"
+                style="@style/ProductDetails" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/display_image"
+            style="@style/ProductImage" />
 
         <Button
             android:id="@+id/email_button"
-            style="@style/ProductDetails"
-            android:text="Send e-mail"/>
+            style="@style/OrderMoreButton"
+            android:text="@string/order_more_button_label" />
+
     </LinearLayout>
 
-</LinearLayout>
+</ScrollView>

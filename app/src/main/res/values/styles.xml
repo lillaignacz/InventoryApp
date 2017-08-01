@@ -2,10 +2,16 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!--activity_detail.xml && activity_editor.xml styles-->
+    <style name="ProductDetailsContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
     </style>
 
     <style name="ProductDetails">
@@ -14,17 +20,136 @@
         <item name="android:layout_weight">1</item>
         <item name="android:padding">16dp</item>
         <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/colorDefaultText</item>
     </style>
 
-    <style name="ProductDetailsContainer">
-        <item name="android:layout_width">match_parent</item>
+    <style name="DetailsStockLabelView">
+        <item name="android:layout_width">@dimen/dp_0</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/colorDefaultText</item>
+    </style>
+
+    <style name="QuantityChangerButton">
+        <item name="android:layout_width">@dimen/dp_0</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@color/colorAccent</item>
     </style>
 
-    <style name="Button">
+    <style name="DetailsStockQuantityView">
+        <item name="android:layout_width">@dimen/dp_0</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/colorDefaultText</item>
+    </style>
+
+    <style name="ProductImage">
+        <item name="android:layout_width">@dimen/image_size</item>
+        <item name="android:layout_height">@dimen/image_size</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_margin">@dimen/medium_padding</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="AddImageButton">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:background">@color/colorAccent</item>
+        <item name="android:layout_margin">@dimen/large_padding</item>
+        <item name="android:text">@string/add_image_button_label</item>
     </style>
+
+    <style name="OrderMoreButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:background">@color/colorAccent</item>
+        <item name="android:layout_margin">@dimen/large_padding</item>
+        <item name="android:text">@string/order_more_button_label</item>
+    </style>
+
+    <!--list_item.xml styles-->
+    <style name="divider">
+        <item name="android:layout_width">@dimen/default_divider</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/colorAccent</item>
+    </style>
+
+    <style name="ItemProductName">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_0</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:padding">@dimen/small_padding</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ItemProductPrice">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_0</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:padding">@dimen/small_padding</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="ItemProductStock">
+        <item name="android:layout_width">@dimen/dp_0</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/small_padding</item>
+    </style>
+
+    <style name="ItemSaleButton">
+        <item name="android:layout_width">@dimen/dp_0</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:padding">@dimen/small_padding</item>
+        <item name="android:focusable">false</item>
+        <item name="android:focusableInTouchMode">false</item>
+        <item name="android:background">@color/colorAccent</item>
+    </style>
+
+    <!--product_list.xml styles-->
+    <style name="empty_list_view">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:textSize">@dimen/empty_view_text_size</item>
+        <item name="android:textColor">@color/colorDefaultText</item>
+    </style>
+
+    <style name="fab">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_margin">@dimen/medium_padding</item>
+        <item name="android:src">@drawable/ic_add_circle</item>
+    </style>
+
+    <style name="list_view">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:divider">@color/colorAccent</item>
+        <item name="android:dividerHeight">@dimen/default_divider</item>
+
+    </style>
+
+
+
+
+
+
+
+
+
 
 </resources>

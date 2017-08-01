@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,78 +7,90 @@
     tools:context="com.example.android.inventory.EditorActivity">
 
     <LinearLayout
-        android:id="@+id/product_name_container"
-        style="@style/ProductDetailsContainer">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <TextView
-            style="@style/ProductDetails"
-            android:text="Product Name:"/>
 
-        <EditText
-            android:id="@+id/add_product_name"
-            style="@style/ProductDetails"/>
+        <LinearLayout
+            android:id="@+id/product_name_container"
+            style="@style/ProductDetailsContainer">
+
+            <TextView
+                style="@style/ProductDetails"
+                android:text="@string/product_name_label" />
+
+            <EditText
+                android:id="@+id/add_product_name"
+                style="@style/ProductDetails"
+                android:inputType="text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/product_price_container"
+            style="@style/ProductDetailsContainer">
+
+            <TextView
+                style="@style/ProductDetails"
+                android:text="@string/price_label" />
+
+            <EditText
+                android:id="@+id/add_product_price"
+                style="@style/ProductDetails"
+                android:inputType="number" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/product_stock_container"
+            style="@style/ProductDetailsContainer">
+
+            <TextView
+                style="@style/ProductDetails"
+                android:text="@string/stock_label" />
+
+            <EditText
+                android:id="@+id/add_product_stock"
+                style="@style/ProductDetails"
+                android:inputType="number" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/product_supplier_name_container"
+            style="@style/ProductDetailsContainer">
+
+            <TextView
+                style="@style/ProductDetails"
+                android:text="@string/supplier_name_label" />
+
+            <EditText
+                android:id="@+id/add_product_supplier_name"
+                style="@style/ProductDetails"
+                android:inputType="text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/product_supplier_email_container"
+            style="@style/ProductDetailsContainer">
+
+            <TextView
+                style="@style/ProductDetails"
+                android:text="Contact" />
+
+            <EditText
+                android:id="@+id/add_product_supplier_email"
+                style="@style/ProductDetails"
+                android:inputType="textEmailAddress" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/add_image_button"
+            style="@style/AddImageButton"/>
+
+        <ImageView
+            android:id="@+id/newly_added_image"
+            style="@style/ProductImage" />
+
     </LinearLayout>
-    
-    <LinearLayout
-        android:id="@+id/product_price_container"
-        style="@style/ProductDetailsContainer">
-        
-        <TextView
-            style="@style/ProductDetails"
-            android:text="Price"/>
 
-        <EditText
-            android:id="@+id/add_product_price"
-            style="@style/ProductDetails"/>
-        
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/product_stock_container"
-        style="@style/ProductDetailsContainer">
-
-        <TextView
-            style="@style/ProductDetails"
-            android:text="Stock"/>
-
-        <EditText
-            android:id="@+id/add_product_stock"
-            style="@style/ProductDetails"/>
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/product_supplier_name_container"
-        style="@style/ProductDetailsContainer">
-
-        <TextView
-            style="@style/ProductDetails"
-            android:text="Supplier Name"/>
-
-        <EditText
-            android:id="@+id/add_product_supplier_name"
-            style="@style/ProductDetails"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/product_supplier_email_container"
-        style="@style/ProductDetailsContainer">
-
-        <TextView
-            style="@style/ProductDetails"
-            android:text="Supplier e-mail:"/>
-
-        <EditText
-            android:id="@+id/add_product_supplier_email"
-            style="@style/ProductDetails"/>
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/add_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Add Image"/>
-    
-</LinearLayout>
+</ScrollView>

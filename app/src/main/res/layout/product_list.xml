@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:drawSelectorOnTop="true"
+    tools:context="com.example.android.inventory.CatalogActivity">
+
+    <ListView
+        android:id="@+id/list"
+        style="@style/list_view">
+    </ListView>
+
+    <TextView
+        android:id="@+id/empty_list_view"
+        style="@style/empty_list_view"
+        android:text="@string/empty_list_view_message"
+       />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        style="@style/fab"/>
+
+</RelativeLayout>
